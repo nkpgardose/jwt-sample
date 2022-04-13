@@ -1,6 +1,6 @@
 import jsonwebtoken from "jsonwebtoken";
 
-const parseBearer = (authorisationValue = '') => {
+export const parseBearer = (authorisationValue = '') => {
 	if(!authorisationValue) return ''
 
   const [_, token] = authorisationValue.trim().split(" ");
@@ -15,11 +15,14 @@ export default function handler(req, res) {
 			algorithms: ['HS256'],
 		}
 
+		/** 
+		 * NOTE: async way because of 4th param
+		 * */
 		jsonwebtoken.verify(
 			token,
 			secretKey,
 			options,
-			(err, decoded) => {
+			(err, payload) => {
 				if(err) {
 					res.status(500).json({
 						name: err.name,
@@ -29,6 +32,7 @@ export default function handler(req, res) {
 					console.warn(err);
 				}
 
+				console.log(payload)
 				res.status(200).json({ result: 'Verified!' })
 			});
 	} else {

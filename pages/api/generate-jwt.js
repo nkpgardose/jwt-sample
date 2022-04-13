@@ -4,11 +4,6 @@ import jsonwebtoken from "jsonwebtoken";
  *	NOTE: This is an example only.
  *	Do not do this in production.
 */
-/**
- * 
- * @param {*} req 
- * @param {*} res 
- */
 export default function handler(req, res) {
 	const secretKey = 'secret-shh'
 	const payload =  {
@@ -27,14 +22,20 @@ export default function handler(req, res) {
 	 *  either the secret for HMAC algorithms or the PEM encoded private key for
 	 *  RSA and ECDSA.
 	 * @param {*} options - expiresIn, algorithm, audience.
+	 * NOTE: In a sync mode because 4th param(callback) is not present.
 	 */
-	jsonwebtoken.sign(
-		payload,
-		secretKey,
-		options,
-		(_err, token) => {
-			console.log(token)
-			res.status(200).json({ token })
-		}
-	)
+	try {
+		const token = jsonwebtoken.sign(
+			payload,
+			secretKey,
+			options,
+		)
+
+		res.status(200).json({ token })
+	} catch(err) {
+		res.status(500).json({
+			name: err.name,
+			message: err.message,
+		})
+	}
 }
