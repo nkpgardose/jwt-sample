@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "abf09174-c8be-4202-9712-edd35488c369",
+		"name": "jwt-sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /api/hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/generate-jwt",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": " ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/generate-jwt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"generate-jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/verify-jwt",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJjb21wYW55IjoiZG9tYWluIiwiaGVsbG8iOiJ3b3JsZCIsImlhdCI6MTY0OTg0MzU3NiwiZXhwIjoxNjQ5ODQ3MTc2fQ.NKheRa8TzOFuonCDRUP2C8hFKhxokvUC63Polz5Gc_Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/verify-jwt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"verify-jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/auth/jwt-issuer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/auth/jwt-issuer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"jwt-issuer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/service-like-using-pem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDk4NjIxMjEsImV4cCI6MTY0OTg2NTcyMX0.aw7AwgB7gIP754rW5Cq6dxlAdRBH0BE9UcuoYrQ2gHWKMYagTvN5aPyuwS4BbO7vnlWZM4eYoVtDS5bOmbOzhf6RZFIwzsIi3EeGZNqf_RqWeu6szqy5tRq-S3LQ_sOf0ePWup7OQZfatBSvb-3-yaFIxtyid31d8yP9h2929nxOMsRtHnKQAVoAjyMPkC3bOYUCLaPgZZWLJtJa-sRvbSgh4n8TPtksJfAcCHnnusxdL1K5VAJkTNSzvEkUSJO_eym22L2bW_20qiBsl-pL7BYbOoGLmUz-mngRbIg3hut7MNLrCJ3MCt6aGDL3gKO9UhkxJgRILNFQD05IO2qkrWqDuu4mMI-tVsUxEiEBIC4rDcvoYlaCsvzclO_0ql0kMXuTPWbvMsiisjFWSx3DtcL96tPBSfoQRMYHCK0igCGPxNG_Wu8czfss81H2V-TUd1b5ssdabmkrRoZMT50xhRKfzeORyxltHArRyDyHf04jueFlIMpTWGt8lpzbonKL",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/service-like-using-pem",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"service-like-using-pem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /api/service-like-using-jwks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDk4NjUwMzQsImV4cCI6MTY0OTg2ODYzNH0.DSCogfzDnecyQc35PGLdx7WcK4KnNyULsOSHIizFo354CfcPKARbf-kUqu7AE5OhlksFzsLzBC24qo1iY--tUpyKPxdhXbYUWRu5VkAOTNfC1zDI-Ejx9vWPPsifNaETsJgO1wi4OpJ74rkP5CWjn03epa0LFbdyzaFxYwwE5Chcq7skcNQyXwafGDZRLS-Gm-vklbbr2GJvOF70Mf8iKR0k0Z1w6j5ClPTIT0NH2I7CWE0pD0qKP8JmgbeWunKXu4FD3RoILQ35OFNZ1DPPkXa3ocjgQFrhK1XWoCxGt3gw2oOjRptZA8KLS_OlASRKJmdMhA-7dsd5mYhlfQxJ0b0rXSHhsW43tFWV-NP2iNT-ROmVrp2C3XvNuhhnxbECqThZmgCrtWycXFXtLmIDj0hurfFRqi2VCL4ixRNr-2eFEvJpBVRdXMIZipvyfU_3fUo9q_NW64YeP74L3WUAyjiL_XNBOEkuuu8mkL82cikgt4OFUvb6nRM1OSlYAHVT",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/service-like-using-jwks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"service-like-using-jwks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
